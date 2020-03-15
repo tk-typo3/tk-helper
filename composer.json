@@ -12,8 +12,5 @@
 		"php": ">=7.2",
 
 		"typo3/cms-core": "^9.5"
-	},
-	"replace": {
-		"tk_helper": "self.version"
 	}
 }
