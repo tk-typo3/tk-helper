@@ -1,0 +1,19 @@
+{
+	"name": "tk-typo3/tk-helper",
+	"type": "typo3-cms-extension",
+	"authors": [
+		{
+			"name": "Timon Kreis",
+			"email": "mail@timonkreis.de",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=7.2",
+
+		"typo3/cms-core": "^9.5"
+	},
+	"replace": {
+		"tk_helper": "self.version"
+	}
+}
