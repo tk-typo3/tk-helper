@@ -4,8 +4,6 @@
  * @copyright 2020 Timon Kreis
  * @license http://www.opensource.org/licenses/mit-license.html
  */
-namespace TimonKreis\Typo3;
-
 defined('TYPO3_MODE') || die('Access denied.');
 
 if (!function_exists('tk_group_fields')) {
