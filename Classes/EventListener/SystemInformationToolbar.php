@@ -9,6 +9,7 @@ declare(strict_types = 1);
 namespace TimonKreis\Typo3\Helper\EventListener;
 
 use TYPO3\CMS;
+use TimonKreis\Typo3\Helper;
 
 /**
  * @package TimonKreis\Typo3\Helper\EventListener
@@ -20,22 +21,8 @@ class SystemInformationToolbar
      */
     public function __invoke(CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent $event) : void
     {
-        CMS\Core\Utility\CommandUtility::exec('git --version', $_, $returnCode);
-
-        // Check if Git is available
-        if ((int)$returnCode !== 0) {
-            return;
-        }
-
-        $revision = trim(CMS\Core\Utility\CommandUtility::exec('git rev-parse --short HEAD'));
-        $branch = trim(CMS\Core\Utility\CommandUtility::exec('git rev-parse --abbrev-ref HEAD'));
-
-        if ($revision && $branch) {
-            $event->getToolbarItem()->addSystemInformation(
-                'LLL:EXT:tk_helper/Resources/Private/Language/locallang.xlf:GitRevision',
-                sprintf('%s [%s]', $revision, $branch),
-                'information-git'
-            );
-        }
+        /** @var Helper\Backend\ToolbarItems\GitRevision $gitRevision */
+        $gitRevision = CMS\Core\Utility\GeneralUtility::makeInstance(Helper\Backend\ToolbarItems\GitRevision::class);
+        $gitRevision->addGitRevision($event->getToolbarItem());
     }
 }
