@@ -1,6 +1,7 @@
 {
     "name": "tk-typo3/tk-helper",
     "type": "typo3-cms-extension",
+    "license": "MIT",
     "authors": [
         {
             "name": "Timon Kreis",
