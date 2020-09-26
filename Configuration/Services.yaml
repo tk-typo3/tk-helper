@@ -1,0 +1,6 @@
+services:
+  TimonKreis\Typo3\Helper\EventListener\SystemInformationToolbar:
+    tags:
+    - name: event.listener
+      identifier: tk-helper-systeminformationtoolbar
+      event: TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent
