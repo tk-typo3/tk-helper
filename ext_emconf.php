@@ -7,7 +7,7 @@
  * @var string $_EXTKEY
  */
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'TK Helper',
+    'title' => 'TK.Helper',
     'description' => '',
     'category' => 'misc',
     'author' => 'Timon Kreis',
