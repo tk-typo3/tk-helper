@@ -8,8 +8,9 @@ declare(strict_types = 1);
 
 namespace TimonKreis\Typo3\Helper\EventListener;
 
-use TYPO3\CMS;
-use TimonKreis\Typo3\Helper;
+use TimonKreis\Typo3\Helper\Backend\ToolbarItems\GitRevision;
+use TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * @package TimonKreis\Typo3\Helper\EventListener
@@ -17,12 +18,12 @@ use TimonKreis\Typo3\Helper;
 class SystemInformationToolbar
 {
     /**
-     * @param CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent $event
+     * @param SystemInformationToolbarCollectorEvent $event
      */
-    public function __invoke(CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent $event) : void
+    public function __invoke(SystemInformationToolbarCollectorEvent $event) : void
     {
-        /** @var Helper\Backend\ToolbarItems\GitRevision $gitRevision */
-        $gitRevision = CMS\Core\Utility\GeneralUtility::makeInstance(Helper\Backend\ToolbarItems\GitRevision::class);
+        /** @var GitRevision $gitRevision */
+        $gitRevision = GeneralUtility::makeInstance(GitRevision::class);
         $gitRevision->addGitRevision($event->getToolbarItem());
     }
 }

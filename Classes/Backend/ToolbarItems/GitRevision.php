@@ -8,7 +8,8 @@ declare(strict_types = 1);
 
 namespace TimonKreis\Typo3\Helper\Backend\ToolbarItems;
 
-use TYPO3\CMS;
+use TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem;
+use TYPO3\CMS\Core\Utility\CommandUtility;
 
 /**
  * @package TimonKreis\Typo3\Helper\Backend\ToolbarItems
@@ -16,19 +17,19 @@ use TYPO3\CMS;
 class GitRevision
 {
     /**
-     * @param CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem $item
+     * @param SystemInformationToolbarItem $item
      */
-    public function addGitRevision(CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem $item) : void
+    public function addGitRevision(SystemInformationToolbarItem $item) : void
     {
-        CMS\Core\Utility\CommandUtility::exec('git --version', $_, $returnCode);
+        CommandUtility::exec('git --version', $_, $returnCode);
 
         // Check if Git is available
         if ((int)$returnCode !== 0) {
             return;
         }
 
-        $revision = trim(CMS\Core\Utility\CommandUtility::exec('git rev-parse --short HEAD'));
-        $branch = trim(CMS\Core\Utility\CommandUtility::exec('git rev-parse --abbrev-ref HEAD'));
+        $revision = trim(CommandUtility::exec('git rev-parse --short HEAD'));
+        $branch = trim(CommandUtility::exec('git rev-parse --abbrev-ref HEAD'));
 
         if ($revision && $branch) {
             $item->addSystemInformation(
