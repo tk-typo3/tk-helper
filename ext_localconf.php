@@ -7,7 +7,7 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 // Toolbar item for Typo3 v9
-call_user_func(function() {
+(function() {
     if (TYPO3_MODE === 'BE'
         && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)
         && version_compare(TYPO3_branch, '9.99', '<=')
@@ -19,4 +19,4 @@ call_user_func(function() {
             'addGitRevision'
         );
     }
-});
+})();
