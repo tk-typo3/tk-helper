@@ -8,6 +8,8 @@ declare(strict_types = 1);
 
 namespace TimonKreis\Typo3\Helper\Tools\TCA;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /**
  * @package TimonKreis\Typo3\Helper\Tools\TCA
  */
@@ -34,7 +36,7 @@ class FieldsGroup
         }
 
         $paletteInserted = false;
-        $availableFields = array_map('trim', explode(',', $tca['types']['1']['showitem']));
+        $availableFields = GeneralUtility::trimExplode(',', $tca['types']['1']['showitem']);
         $filteredFields = [];
 
         foreach ($availableFields as $field) {
