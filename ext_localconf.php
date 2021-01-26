@@ -15,7 +15,7 @@ defined('TYPO3_MODE') || die('Access denied.');
         TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class)->connect(
             TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem::class,
             'getSystemInformation',
-            TimonKreis\Typo3\Helper\Backend\ToolbarItems\GitRevision::class,
+            TimonKreis\TkHelper\Backend\ToolbarItems\GitRevision::class,
             'addGitRevision'
         );
     }

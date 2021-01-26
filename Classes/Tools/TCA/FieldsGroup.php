@@ -6,12 +6,12 @@
  */
 declare(strict_types = 1);
 
-namespace TimonKreis\Typo3\Helper\Tools\TCA;
+namespace TimonKreis\TkHelper\Tools\TCA;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * @package TimonKreis\Typo3\Helper\Tools\TCA
+ * @package TimonKreis\TkHelper\Tools\TCA
  */
 class FieldsGroup
 {

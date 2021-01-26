@@ -1,5 +1,5 @@
 services:
-  TimonKreis\Typo3\Helper\EventListener\SystemInformationToolbar:
+  TimonKreis\TkHelper\EventListener\SystemInformationToolbar:
     tags:
     - name: event.listener
       identifier: tk-helper-systeminformationtoolbar

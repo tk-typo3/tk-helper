@@ -6,13 +6,13 @@
  */
 declare(strict_types = 1);
 
-namespace TimonKreis\Typo3\Helper\Backend\ToolbarItems;
+namespace TimonKreis\TkHelper\Backend\ToolbarItems;
 
 use TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem;
 use TYPO3\CMS\Core\Utility\CommandUtility;
 
 /**
- * @package TimonKreis\Typo3\Helper\Backend\ToolbarItems
+ * @package TimonKreis\TkHelper\Backend\ToolbarItems
  */
 class GitRevision
 {

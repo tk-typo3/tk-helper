@@ -6,14 +6,14 @@
  */
 declare(strict_types = 1);
 
-namespace TimonKreis\Typo3\Helper\EventListener;
+namespace TimonKreis\TkHelper\EventListener;
 
-use TimonKreis\Typo3\Helper\Backend\ToolbarItems\GitRevision;
+use TimonKreis\TkHelper\Backend\ToolbarItems\GitRevision;
 use TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * @package TimonKreis\Typo3\Helper\EventListener
+ * @package TimonKreis\TkHelper\EventListener
  */
 class SystemInformationToolbar
 {
