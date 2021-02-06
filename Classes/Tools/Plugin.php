@@ -37,8 +37,8 @@ class Plugin
         array $controllerActions,
         array $nonCacheableControllerActions
     ) : void {
-        $sanitizedExtensionKey = str_replace('_', '', strtolower($pluginName));
-        $sanitizedPluginName = str_replace(' ', '', strtolower($pluginName));
+        $sanitizedExtensionKey = str_replace('_', '', strtolower($extensionKey));
+        $sanitizedPluginName = strtolower($pluginName);
 
         ExtensionUtility::configurePlugin(
             $extensionName,
