@@ -28,6 +28,7 @@ class Plugin
      * @param string $icon
      * @param array $controllerActions
      * @param array $nonCacheableControllerActions
+     * @param bool $flexForm
      */
     public static function registerPlugin(
         string $extensionKey,
@@ -35,7 +36,8 @@ class Plugin
         string $pluginName,
         string $icon,
         array $controllerActions,
-        array $nonCacheableControllerActions
+        array $nonCacheableControllerActions,
+        bool $flexForm = true
     ) : void {
         $sanitizedExtensionKey = str_replace('_', '', strtolower($extensionKey));
         $sanitizedPluginName = strtolower($pluginName);
@@ -72,5 +74,14 @@ class Plugin
             SvgIconProvider::class,
             ['source' => 'EXT:' . $extensionKey . '/Resources/Public/Icons/' . $icon . '.svg']
         );
+
+        if ($flexForm) {
+            $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$sanitizedPluginName] = 'pi_flexform';
+
+            ExtensionManagementUtility::addPiFlexFormValue(
+                $sanitizedPluginName,
+                'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . '.xml'
+            );
+        }
     }
 }
