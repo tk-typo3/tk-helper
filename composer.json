@@ -1,22 +1,33 @@
 {
-    "name": "tk-typo3/tk-helper",
-    "type": "typo3-cms-extension",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Timon Kreis",
-            "email": "mail@timonkreis.de",
-            "homepage": "https://www.timonkreis.de/",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": ">=7.2",
-        "typo3/cms-core": "^9.5 || ^10.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "TimonKreis\\TkHelper\\": "Classes"
-        }
-    }
+	"name": "tk-typo3/tk-helper",
+	"type": "typo3-cms-extension",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Timon Kreis",
+			"email": "mail@timonkreis.de",
+			"homepage": "https://www.timonkreis.de/",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=7.2",
+		"typo3/cms-core": "^10.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"TimonKreis\\TkHelper\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "tk_helper",
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".Build/Web"
+		}
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	}
 }

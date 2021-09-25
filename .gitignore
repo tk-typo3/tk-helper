@@ -1,7 +1,7 @@
+/.Build
 /.idea
 /composer.lock
 /node_modules
 /package-lock.json
 /Resources/Public/Icons/*.gif
 /Tests
-/vendor
